@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("api/vi")
+@RequestMapping("api/vi/pay")
 @Slf4j
 @AllArgsConstructor
 public class PaymentController {
@@ -17,7 +17,7 @@ public class PaymentController {
     @Autowired
     private final PaymentService paymentService;
 
-    @PostMapping("/pay")
+    @PostMapping("/pay-now")
     public PaymentModel makePayments(@RequestBody PaymentModel paymentModel){
         return paymentService.addNewPayment(paymentModel);
     }
