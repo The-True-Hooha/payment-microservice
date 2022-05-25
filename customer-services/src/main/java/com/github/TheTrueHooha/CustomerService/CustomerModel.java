@@ -1,9 +1,6 @@
 package com.github.TheTrueHooha.CustomerService;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -11,8 +8,9 @@ import javax.persistence.*;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 @Entity
-public class CustomerServiceModel {
+public class CustomerModel {
 
     @Id
     @SequenceGenerator(name = "customer_id_sequence", sequenceName = "customer_id_sequence")
