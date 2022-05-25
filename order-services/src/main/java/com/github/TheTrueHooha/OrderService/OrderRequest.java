@@ -1,8 +1,8 @@
 package com.github.TheTrueHooha.OrderService;
 
 public record OrderRequest(
-        String orderName,
+        String orderRecipient,
         Integer orderSize,
-        double orderPrice
+        double orderTotalPrice
 ) {
 }

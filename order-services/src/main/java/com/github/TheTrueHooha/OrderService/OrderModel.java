@@ -17,7 +17,10 @@ public class OrderModel {
     @SequenceGenerator(name = "order_id_sequence", sequenceName = "order_id_sequence")
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "order_id_sequence")
     private Integer orderId;
-    private String orderName;
+
+    private String orderRecipient;
+
     private Integer orderSize;
-    private double orderPrice;
+
+    private double orderTotalPrice;
 }

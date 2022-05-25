@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: order-microservices
+
+
+server:
+  port: 5200
