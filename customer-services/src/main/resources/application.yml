@@ -1,0 +1,15 @@
+server:
+  port: 4000
+
+spring:
+  application:
+    name: customer-microservice
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/paymentdb
+    username: root
+    password: password
+  jpa:
+    hibernate.ddl-auto: update
+    generate-ddl: true
+    show-sql: true
