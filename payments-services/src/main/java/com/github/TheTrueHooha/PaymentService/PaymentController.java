@@ -8,8 +8,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+
 @RestController
-@RequestMapping("api/vi/pay")
+@RequestMapping("api/v1/pay")
 @Slf4j
 @AllArgsConstructor
 public class PaymentController {
@@ -19,6 +20,7 @@ public class PaymentController {
 
     @PostMapping("/pay-now")
     public PaymentModel makePayments(@RequestBody PaymentModel paymentModel){
-        return paymentService.addNewPayment(paymentModel);
+        return paymentService.saveNewPayment(paymentModel);
     }
+
 }

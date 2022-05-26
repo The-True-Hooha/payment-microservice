@@ -19,4 +19,8 @@ public class PaymentModel {
     private String paymentStatus;
 
     private String transactionId;
+
+    private int orderId;
+
+    private double amount;
 }
