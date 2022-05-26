@@ -1,16 +1,15 @@
+server:
+  port: 5200
+
 spring:
   application:
     name: order-microservices
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/orderdb
+    url: jdbc:mysql://localhost:3306/ordersdb
     username: root
     password: password
   jpa:
     hibernate.ddl-auto: update
     generate-ddl: true
     show-sql: true
-
-
-server:
-  port: 5200
