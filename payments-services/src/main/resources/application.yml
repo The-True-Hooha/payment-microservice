@@ -6,7 +6,7 @@ spring:
     name: payments-microservice
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/paymentsdb
+    url: jdbc:mysql://localhost:3306/paymentdb
     username: root
     password: password
   jpa:
