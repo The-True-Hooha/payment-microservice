@@ -19,8 +19,9 @@ public class OrderController {
     private final OrderService orderService;
 
     @PostMapping("/new-order")
-    public void makeAnOrder(@RequestBody OrderRequest orderRequest){
+    public OrderResponse makeAnOrder(@RequestBody OrderRequest orderRequest){
         log.info("requesting new order{}", orderRequest);
-        orderService.saveNewOrder(orderRequest);
+        return orderService.saveNewOrder(orderRequest);
+
     }
 }
