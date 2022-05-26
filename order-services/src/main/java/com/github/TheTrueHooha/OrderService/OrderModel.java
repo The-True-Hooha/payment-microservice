@@ -20,7 +20,10 @@ public class OrderModel {
 
     private String orderRecipient;
 
-    private Integer orderSize;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "transaction_id_sequence")
+    private String transactionId;
+
+    private int orderSize;
 
     private double orderTotalPrice;
 }
