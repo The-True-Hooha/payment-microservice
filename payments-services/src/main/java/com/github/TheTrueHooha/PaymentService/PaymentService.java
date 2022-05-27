@@ -26,6 +26,7 @@ public class PaymentService {
 
     //TODO: add payment verification status with Google Pay platform
 
+    //code that verifies if the payment is successful or not
     public String paymentState(){
         return new Random().nextBoolean()?"success" : "false";
     }
