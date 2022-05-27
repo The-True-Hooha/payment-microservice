@@ -9,7 +9,6 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Builder
 
 public class OrderModel {
 
@@ -26,4 +25,6 @@ public class OrderModel {
     private int orderSize;
 
     private double orderTotalPrice;
+
+    //todo:add model for item name
 }
