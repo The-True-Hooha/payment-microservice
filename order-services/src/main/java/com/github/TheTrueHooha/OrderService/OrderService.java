@@ -27,7 +27,7 @@ public class OrderService {
         sharedModel.setTransactionId(orderModel.getTransactionId());
 
         //injecting a rest template call
-        SharedPaymentModel sharedResponse = restTemplate.postForObject("http://localhost:4200/api/v1/pay/pay-now",
+        SharedPaymentModel sharedResponse = restTemplate.postForObject("http://payments-microservice/api/v1/pay/pay-now",
                 sharedModel, SharedPaymentModel.class);
 
         //response that indicates the payment status
