@@ -1,0 +1,51 @@
+server:
+  port: 4040
+
+spring:
+  application:
+    name: cloud-service-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: order-microservices
+          uri: lb://order-microservices
+          predicates:
+            - Path=/api/v1/order/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: order-microservices
+                fallbackuri: froward:/order-failed/redirect
+        - id: payments-microservice
+          uri: lb://payments-microservice
+          predicates:
+            - Path=/api/v1/pay/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: payments-microservice
+                fallbackuri: forward:/payment-failed/redirect
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http//localhost:8671/eureka/
+  instance:
+    hostname: localhost
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - hystrix.stream
+
+hystrix:
+  command:
+    fallbackcmd:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 8000
