@@ -26,5 +26,5 @@ public class OrderModel {
 
     private double orderTotalPrice;
 
-    //todo:add model for item name
+    //todo:add model for order name
 }

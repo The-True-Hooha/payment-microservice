@@ -1,5 +1,6 @@
 package com.github.TheTrueHooha.OrderService;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,7 @@ public class OrderController {
     private final OrderService orderService;
 
     @PostMapping("/new-order")
-    public OrderResponse makeAnOrder(@RequestBody OrderRequest orderRequest){
+    public OrderResponse makeAnOrder(@RequestBody OrderRequest orderRequest) throws JsonProcessingException {
         log.info("requesting new order{}", orderRequest);
         return orderService.saveNewOrder(orderRequest);
 
