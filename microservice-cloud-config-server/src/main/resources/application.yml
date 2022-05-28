@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: cloud-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/The-True-Hooha/microservice-cloud-configuration.git
+
+server:
+  port: 4041
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http//localhost:8671/eureka/
+  instance:
+        hostname: localhost
