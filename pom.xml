@@ -13,7 +13,9 @@
       <module>payments-services</module>
       <module>customer-services</module>
     <module>eureka-services</module>
-    <module>service-gateway</module>
+    <module>cloud-service-gateway</module>
+      <module>hystrix-dashboard</module>
+      <module>microservice-cloud-config-server</module>
   </modules>
 
 
